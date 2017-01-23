@@ -1,3 +1,7 @@
+// Allow this module to be reloaded by hotswap when changed
+// useful if you're using alexa-app-server
+module.change_code = 1;
+
 import Alexa from 'alexa-app';
 
 const launch = (options) => {
