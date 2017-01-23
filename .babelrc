@@ -1,0 +1,36 @@
+{
+  "plugins": ["transform-object-rest-spread"],
+  "env": {
+    "production": {
+      "presets": [
+        [ "env", {
+          "targets": {
+            "node": 4.3
+          },
+          "modules": false // because webpack 2 will handle this
+        }], "babili"
+      ]
+    },
+    "development": {
+      "presets": [
+        [ "env", {
+          "targets": {
+            "node": 4.3
+          },
+          "modules": false,
+          "debug": true
+        }]
+      ]
+    },
+    "test": {
+      "presets": [
+        [ "env", {
+          "targets": {
+            "node": 4.3
+          },
+          "modules": "commonjs" // not using webpack for tests
+        }]
+      ]
+    }
+  }
+}
