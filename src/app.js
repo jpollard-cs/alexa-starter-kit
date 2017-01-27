@@ -1,12 +1,5 @@
-// Allow this module to be reloaded by hotswap when changed
-// useful if you're using alexa-app-server
-module.change_code = 1;
-
-import Alexa from 'alexa-app';
-
-const launch = (options) => {
+const launch = (app, options) => {
     const { shouldEndSessionByDefault } = options;
-    const app = new Alexa.app('alexa-starter-kit');
     const prompt = 'hello';
     app.launch((req, res) =>  res.say(prompt).reprompt(prompt).shouldEndSession(shouldEndSessionByDefault))
 };

@@ -1,14 +1,19 @@
 {
   "plugins": ["transform-object-rest-spread"],
+  // transform-object-rest-spread because babel-preset-env won't transpile this for us, but not supported by node 4.3
   "env": {
     "production": {
+      "plugins": ["transform-es2015-template-literals"],
+      // transform-es2015-template-literals because uglify-harmony branch does not support these yet
+      // https://github.com/mishoo/UglifyJS2/issues/448
       "presets": [
         [ "env", {
           "targets": {
             "node": 4.3
           },
-          "modules": false // because webpack 2 will handle this
-        }], "babili"
+          "debug": false,
+          "modules": "commonjs" // needed for compatibility with alexa-app-server so we can't use webpack for this
+        }]
       ]
     },
     "development": {
@@ -17,8 +22,8 @@
           "targets": {
             "node": 4.3
           },
-          "modules": false,
-          "debug": true
+          "debug": true,
+          "modules": "commonjs"
         }]
       ]
     },
@@ -28,7 +33,7 @@
           "targets": {
             "node": 4.3
           },
-          "modules": "commonjs" // not using webpack for tests
+          "modules": "commonjs"
         }]
       ]
     }
