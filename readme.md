@@ -25,7 +25,3 @@ We have two potential issue areas here:
     - these features should be transpiled by including an appropriate Babel plugin in the `production` environment portion of the babelrc file (because we only need Uglify in production)
 
 please submit a bug report (or even better - a PR) if you encounter any compatibility issues
-
-## TODO
-- Provide a simple way to include audio assets in the bundled zip file
-
