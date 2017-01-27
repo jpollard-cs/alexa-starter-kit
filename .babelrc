@@ -12,7 +12,7 @@
             "node": 4.3
           },
           "debug": false,
-          "modules": "commonjs" // needed for compatibility with alexa-app-server so we can't use webpack for this
+          "modules": false // we'll leave this to webpack so we get the benefit of tree shaking
         }]
       ]
     },
@@ -23,7 +23,7 @@
             "node": 4.3
           },
           "debug": true,
-          "modules": "commonjs"
+          "modules": false
         }]
       ]
     },
@@ -33,7 +33,7 @@
           "targets": {
             "node": 4.3
           },
-          "modules": "commonjs"
+          "modules": "commonjs" // we don't go through webpack for our tests
         }]
       ]
     }
