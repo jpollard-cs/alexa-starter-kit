@@ -3,7 +3,7 @@
   // transform-object-rest-spread because babel-preset-env won't transpile this for us, but not supported by node 4.3
   "env": {
     "production": {
-      "plugins": ["transform-es2015-template-literals"],
+      "plugins": ["transform-es2015-template-literals", "transform-es2015-shorthand-properties"],
       // transform-es2015-template-literals because uglify-harmony branch does not support these yet
       // https://github.com/mishoo/UglifyJS2/issues/448
       "presets": [

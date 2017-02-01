@@ -21,6 +21,14 @@ const makeConfig = (environment = Environment.PRODUCTION) => {
             library: 'alexaApp',
             filename: 'index.js'
         },
+        target: 'node',
+        node: {
+            console: false,
+            global: true,
+            process: true,
+            Buffer: true,
+            setImmediate: true
+        },
         module: {
             rules: [
                 {
